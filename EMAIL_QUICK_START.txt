@@ -21,8 +21,8 @@ Get email alerts after each bot run at 7 AM!
 
 5. Click "Generate"
 
-6. Copy the 16-character password (e.g., "abcd efgh ijkl mnop")
-   Remove the spaces: "abcdefghijklmnop"
+6. Copy the app password (e.g., "abcd efgh ijkl mnop")
+   Remove any spaces: "abcdefghijklmnop"
 
 
 ═══════════════════════════════════════════════════════════════
@@ -82,7 +82,7 @@ If slot found: 🎉 URGENT email with action steps!
 → Make sure you added it to .env file
 
 "Failed to send email"
-→ Check password is correct (16 characters, no spaces)
+→ Check password is correct (remove any spaces)
 → Verify 2FA is enabled on Google account
 
 "Didn't receive email"

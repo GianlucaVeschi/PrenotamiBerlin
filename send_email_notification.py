@@ -190,7 +190,8 @@ def send_email_macos_mail(subject, body):
         
         # Create temporary file with email body
         temp_file = PROJECT_DIR / ".email_temp.txt"
-        temp_file.write_text(body)
+        with open(temp_file, 'w') as f:
+            f.write(body)
         
         # Send using mail command
         cmd = f'cat {temp_file} | mail -s "{subject}" {RECIPIENT_EMAIL}'

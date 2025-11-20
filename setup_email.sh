@@ -42,10 +42,10 @@ fi
 echo ""
 read -p "Enter your Gmail App Password (16 characters, no spaces): " app_password
 
-# Validate format (should be 16 characters)
-if [ ${#app_password} -ne 16 ]; then
+# Validate format (should be at least 8 characters)
+if [ ${#app_password} -lt 8 ]; then
     echo ""
-    echo "⚠️  Warning: App password should be 16 characters"
+    echo "⚠️  Warning: App password should be at least 8 characters"
     echo "You entered: ${#app_password} characters"
     echo ""
     read -p "Continue anyway? (y/n): " -n 1 -r

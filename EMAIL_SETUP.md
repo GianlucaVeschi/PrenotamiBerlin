@@ -29,7 +29,7 @@ After each bot run at 7:00 AM, you'll get an email with:
 3. Under "Select app", choose **Mail**
 4. Under "Select device", choose **Mac** (or Other)
 5. Click **Generate**
-6. **Copy the 16-character password** (example: `abcd efgh ijkl mnop`)
+6. **Copy the app password** (typically 16 characters, e.g., `abcd efgh ijkl mnop`)
 
 #### Step 3: Add to .env File
 
@@ -39,10 +39,10 @@ Edit your `.env` file:
 nano /Users/gianluca.veschi@getyourguide.com/VScodeProjects/PrenotamiBerlin/.env
 ```
 
-Add this line with your app password (remove spaces):
+Add this line with your app password (remove spaces if present):
 
 ```bash
-GMAIL_APP_PASSWORD=abcdefghijklmnop
+GMAIL_APP_PASSWORD=your_app_password_here
 ```
 
 Your complete `.env` should look like:
@@ -174,7 +174,7 @@ Time is critical - act now!
 **Problem:** Incorrect app password or network issue
 
 **Solutions:**
-1. Verify app password is correct (16 characters, no spaces)
+1. Verify app password is correct (remove any spaces)
 2. Check internet connection
 3. Verify 2FA is enabled on Google account
 4. Try regenerating the app password
