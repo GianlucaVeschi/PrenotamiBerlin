@@ -1,0 +1,122 @@
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║            📧 EMAIL NOTIFICATIONS - QUICK START             ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+Get email alerts after each bot run at 7 AM!
+
+═══════════════════════════════════════════════════════════════
+
+🚀 STEP 1: Get Gmail App Password (5 minutes)
+═══════════════════════════════════════════════════════════════
+
+1. Go to: https://myaccount.google.com/apppasswords
+
+2. Sign in to: gianluca.veschi00@gmail.com
+
+3. Click "Select app" → Choose "Mail"
+
+4. Click "Select device" → Choose "Mac" (or Other)
+
+5. Click "Generate"
+
+6. Copy the 16-character password (e.g., "abcd efgh ijkl mnop")
+   Remove the spaces: "abcdefghijklmnop"
+
+
+═══════════════════════════════════════════════════════════════
+
+🔧 STEP 2: Add to Configuration (1 minute)
+═══════════════════════════════════════════════════════════════
+
+Run the setup helper:
+
+    ~/VScodeProjects/PrenotamiBerlin/setup_email.sh
+
+Or manually edit .env:
+
+    nano ~/VScodeProjects/PrenotamiBerlin/.env
+
+Add this line (with your actual app password):
+
+    GMAIL_APP_PASSWORD=abcdefghijklmnop
+
+Save and exit (Ctrl+X, Y, Enter)
+
+
+═══════════════════════════════════════════════════════════════
+
+✅ STEP 3: Test Email (1 minute)
+═══════════════════════════════════════════════════════════════
+
+    cd ~/VScodeProjects/PrenotamiBerlin
+    source venv/bin/activate
+    python3 send_email_notification.py
+
+Check your email! You should receive a test message.
+
+
+═══════════════════════════════════════════════════════════════
+
+📧 WHAT YOU'LL RECEIVE
+═══════════════════════════════════════════════════════════════
+
+Every day at 7 AM (after bot runs), you'll get an email with:
+
+✅ Execution status
+✅ Which day (1/2/3)
+✅ Slot availability status
+✅ Screenshot count
+✅ Recent logs
+
+If slot found: 🎉 URGENT email with action steps!
+
+
+═══════════════════════════════════════════════════════════════
+
+🆘 TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════
+
+"App password not configured"
+→ Make sure you added it to .env file
+
+"Failed to send email"
+→ Check password is correct (16 characters, no spaces)
+→ Verify 2FA is enabled on Google account
+
+"Didn't receive email"
+→ Check spam folder
+→ Wait 1-2 minutes
+→ Mark as "Not Spam"
+
+
+═══════════════════════════════════════════════════════════════
+
+💡 PRO TIPS
+═══════════════════════════════════════════════════════════════
+
+✓ Enable Gmail notifications on your phone
+✓ Mark first email as "Not Spam"
+✓ Add to contacts or create Gmail filter
+✓ Set as important/starred for instant alerts
+
+
+═══════════════════════════════════════════════════════════════
+
+📖 DETAILED GUIDE
+═══════════════════════════════════════════════════════════════
+
+See: EMAIL_SETUP.md for complete instructions
+
+
+═══════════════════════════════════════════════════════════════
+
+✅ READY!
+
+Once set up, you'll automatically receive email updates!
+
+No need to check logs manually - everything comes to your inbox!
+
+═══════════════════════════════════════════════════════════════
+

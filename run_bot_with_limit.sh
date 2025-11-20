@@ -31,6 +31,10 @@ if [ $DAYS_ELAPSED -lt $DAYS_TO_RUN ]; then
     python3 "${PROJECT_DIR}/prenotami_bot.py" >> "${PROJECT_DIR}/cron_bot.log" 2>&1
     
     echo "$(date): Bot execution completed" >> "${PROJECT_DIR}/cron_bot.log"
+    
+    # Send email notification
+    echo "$(date): Sending email notification..." >> "${PROJECT_DIR}/cron_bot.log"
+    python3 "${PROJECT_DIR}/send_email_notification.py" >> "${PROJECT_DIR}/cron_bot.log" 2>&1
 else
     echo "$(date): 3-day period completed. Removing cron job..." >> "${PROJECT_DIR}/cron_bot.log"
     
