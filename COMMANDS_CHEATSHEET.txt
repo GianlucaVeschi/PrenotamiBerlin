@@ -1,0 +1,244 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║              📋 PRENOTAMI BOT - COMMAND CHEATSHEET           ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════
+🔧 SETUP COMMANDS
+═══════════════════════════════════════════════════════════════
+
+Setup booking details (address, height, etc.):
+  ~/VScodeProjects/PrenotamiBerlin/setup_booking_details.sh
+
+Setup email notifications:
+  ~/VScodeProjects/PrenotamiBerlin/setup_email.sh
+
+Edit configuration:
+  nano ~/VScodeProjects/PrenotamiBerlin/.env
+
+═══════════════════════════════════════════════════════════════
+🏃 RUNNING THE BOT
+═══════════════════════════════════════════════════════════════
+
+Run bot once (manual test):
+  cd ~/VScodeProjects/PrenotamiBerlin
+  source venv/bin/activate
+  python3 prenotami_bot.py
+
+Run unlimited scheduler:
+  ~/VScodeProjects/PrenotamiBerlin/run_scheduler.sh
+
+═══════════════════════════════════════════════════════════════
+📊 MONITORING COMMANDS
+═══════════════════════════════════════════════════════════════
+
+Quick check - did it run today?
+  ~/VScodeProjects/PrenotamiBerlin/did_it_run.sh
+
+Complete status check:
+  ~/VScodeProjects/PrenotamiBerlin/check_bot_status.sh
+
+View recent logs:
+  tail -50 ~/VScodeProjects/PrenotamiBerlin/cron_bot.log
+  tail -50 ~/VScodeProjects/PrenotamiBerlin/prenotami_bot.log
+
+View today's screenshots:
+  ls -lt ~/VScodeProjects/PrenotamiBerlin/screenshot_* | head -10
+
+Open latest screenshot:
+  open ~/VScodeProjects/PrenotamiBerlin/screenshot_availability_page_*.png
+
+═══════════════════════════════════════════════════════════════
+🔍 DEBUGGING COMMANDS
+═══════════════════════════════════════════════════════════════
+
+Debug email system:
+  ~/VScodeProjects/PrenotamiBerlin/debug_email.sh
+
+Test mail configuration:
+  ~/VScodeProjects/PrenotamiBerlin/test_mail.sh
+
+Test complete setup:
+  ~/VScodeProjects/PrenotamiBerlin/test_setup.py
+
+═══════════════════════════════════════════════════════════════
+⏰ CRON MANAGEMENT
+═══════════════════════════════════════════════════════════════
+
+View active cron jobs:
+  crontab -l
+
+Edit cron jobs:
+  crontab -e
+
+Remove all cron jobs:
+  crontab -r
+
+Check if cron is running:
+  ps aux | grep cron
+
+═══════════════════════════════════════════════════════════════
+📧 EMAIL COMMANDS
+═══════════════════════════════════════════════════════════════
+
+Send test email:
+  cd ~/VScodeProjects/PrenotamiBerlin
+  source venv/bin/activate
+  python3 send_email_notification.py
+
+Open Gmail app password page:
+  open "https://myaccount.google.com/apppasswords"
+
+Open Gmail inbox:
+  open "https://mail.google.com"
+
+═══════════════════════════════════════════════════════════════
+🔒 SECURITY COMMANDS
+═══════════════════════════════════════════════════════════════
+
+Check what's NOT committed to Git:
+  cd ~/VScodeProjects/PrenotamiBerlin
+  git status --ignored
+
+View .env file (sensitive):
+  cat ~/VScodeProjects/PrenotamiBerlin/.env
+
+Backup .env file:
+  cp ~/VScodeProjects/PrenotamiBerlin/.env ~/Desktop/prenotami_backup.env
+
+═══════════════════════════════════════════════════════════════
+🔄 GIT COMMANDS
+═══════════════════════════════════════════════════════════════
+
+Pull latest updates:
+  cd ~/VScodeProjects/PrenotamiBerlin
+  git pull
+
+View commit history:
+  cd ~/VScodeProjects/PrenotamiBerlin
+  git log --oneline
+
+Check repository status:
+  cd ~/VScodeProjects/PrenotamiBerlin
+  git status
+
+View on GitHub:
+  open "https://github.com/GianlucaVeschi/PrenotamiBerlin"
+
+═══════════════════════════════════════════════════════════════
+🛠️ TROUBLESHOOTING COMMANDS
+═══════════════════════════════════════════════════════════════
+
+Check Python version:
+  python3 --version
+
+Check if packages installed:
+  cd ~/VScodeProjects/PrenotamiBerlin
+  source venv/bin/activate
+  pip list | grep selenium
+
+Check ChromeDriver:
+  chromedriver --version
+  which chromedriver
+
+Check if computer will sleep:
+  pmset -g
+
+Prevent sleep for 2 hours:
+  caffeinate -t 7200
+
+═══════════════════════════════════════════════════════════════
+📂 FILE LOCATIONS
+═══════════════════════════════════════════════════════════════
+
+Project directory:
+  ~/VScodeProjects/PrenotamiBerlin
+
+Configuration file:
+  ~/VScodeProjects/PrenotamiBerlin/.env
+
+Logs:
+  ~/VScodeProjects/PrenotamiBerlin/cron_bot.log
+  ~/VScodeProjects/PrenotamiBerlin/prenotami_bot.log
+
+Screenshots:
+  ~/VScodeProjects/PrenotamiBerlin/screenshot_*.png
+
+Documentation:
+  ~/VScodeProjects/PrenotamiBerlin/*.md
+
+═══════════════════════════════════════════════════════════════
+🎯 DAILY ROUTINE
+═══════════════════════════════════════════════════════════════
+
+After 7:05 AM, run:
+  ~/VScodeProjects/PrenotamiBerlin/did_it_run.sh
+
+Check for urgent emails:
+  open "https://mail.google.com"
+
+If slot was found, check screenshots:
+  open ~/VScodeProjects/PrenotamiBerlin/screenshot_booking_completed_*.png
+
+═══════════════════════════════════════════════════════════════
+⚡ QUICK FIXES
+═══════════════════════════════════════════════════════════════
+
+Bot didn't run:
+  crontab -l  # Check if cron job exists
+
+Email not working:
+  ~/VScodeProjects/PrenotamiBerlin/debug_email.sh
+
+Form not filling:
+  cat ~/VScodeProjects/PrenotamiBerlin/.env | grep INDIRIZZO
+
+Can't find screenshots:
+  ls ~/VScodeProjects/PrenotamiBerlin/screenshot_* | tail -10
+
+Reinstall ChromeDriver:
+  brew reinstall chromedriver
+  xattr -d com.apple.quarantine $(which chromedriver)
+
+═══════════════════════════════════════════════════════════════
+📚 DOCUMENTATION
+═══════════════════════════════════════════════════════════════
+
+Complete guide:
+  cat ~/VScodeProjects/PrenotamiBerlin/COMPLETE_SETUP_GUIDE.md
+
+Booking form setup:
+  cat ~/VScodeProjects/PrenotamiBerlin/BOOKING_FORM_SETUP.md
+
+Email setup:
+  cat ~/VScodeProjects/PrenotamiBerlin/EMAIL_SETUP.md
+
+Troubleshooting:
+  cat ~/VScodeProjects/PrenotamiBerlin/TROUBLESHOOTING.md
+
+Morning checklist:
+  cat ~/VScodeProjects/PrenotamiBerlin/MORNING_CHECKLIST.md
+
+═══════════════════════════════════════════════════════════════
+🔗 USEFUL LINKS
+═══════════════════════════════════════════════════════════════
+
+Prenotami website:
+  open "https://prenotami.esteri.it/"
+
+GitHub repository:
+  open "https://github.com/GianlucaVeschi/PrenotamiBerlin"
+
+Gmail app passwords:
+  open "https://myaccount.google.com/apppasswords"
+
+Gmail security:
+  open "https://myaccount.google.com/security"
+
+═══════════════════════════════════════════════════════════════
+
+💡 TIP: Add this file to your favorites for quick reference!
+
+═══════════════════════════════════════════════════════════════
+
