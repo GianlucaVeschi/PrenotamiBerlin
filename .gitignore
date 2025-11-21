@@ -16,6 +16,10 @@ ENV/
 *.png
 screenshot_*
 
+# Runtime files
+.cron_start_date
+.email_temp.txt
+
 # IDE
 .vscode/
 .idea/
